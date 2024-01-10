@@ -1,5 +1,5 @@
 Attribute VB_Name = "Module1"
-Function adicionalNoturno(hrEntrada As Double, hrTermino As Double)
+Function adicionalNoturno_1Intervalo(hrEntrada As Double, hrTermino As Double)
 
 Dim minEntrada As Integer
 Dim minTermino As Integer
@@ -31,7 +31,7 @@ End If
 
 End Function
 
-Function adicionalNoturno4(hrEntrada As Double, hrSaida As Double, hrRetorno As Double, hrTermino As Double)
+Function adicionalNoturno_2Intervalos(hrEntrada As Double, hrSaida As Double, hrRetorno As Double, hrTermino As Double)
 
 Dim minEntrada As Integer
 Dim minTermino As Integer
@@ -44,7 +44,7 @@ minTermino = hrTermino * 1440
 
     For minCount = minEntrada To minTermino - 1
     
-        If minEntrada < 1320 And minTermino > 1739 Then
+        If minEntrada < 1320 And minCount > 1739 Then
         
             minNoturnoProg = minNoturnoProg + 1
         
@@ -54,6 +54,8 @@ minTermino = hrTermino * 1440
     
     hrNoturnoProg = minNoturnoProg / 1440
     
-    adicionalNoturno4 = hrNoturnoProg + adicionalNoturno(hrEntrada, hrSaida) + adicionalNoturno(hrRetorno, hrTermino)
+    adicionalNoturno4 = hrNoturnoProg + adicionalNoturno_1Intervalo(hrEntrada, hrSaida) + adicionalNoturno_1Intervalo(hrRetorno, hrTermino)
 
 End Function
+
+
